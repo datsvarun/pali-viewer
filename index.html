@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pali Digital Twin</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Sidebar / Layer toggle panel -->
+    <aside id="sidebar" class="glassmorphism">
+      <header>
+        <h1>Pali Digital Twin</h1>
+        <p>Explore Pali in a 3D Web-GIS Interface</p>
+      </header>
+
+      <div class="layer-list-container">
+        <h3>Basemap</h3>
+        <ul id="basemap-list" style="list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+          <li>
+            <label class="layer-item">
+              <input type="radio" name="basemap" id="basemap-satellite" checked>
+              <span class="layer-label">Satellite Streets</span>
+            </label>
+          </li>
+          <li>
+            <label class="layer-item">
+              <input type="radio" name="basemap" id="basemap-osm">
+              <span class="layer-label">OpenStreetMap (OSM)</span>
+            </label>
+          </li>
+        </ul>
+
+        <h3>Map Layers</h3>
+        <ul id="layer-list">
+          <!-- Dynamically populated via main.ts -->
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Map Container -->
+    <main id="map"></main>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
