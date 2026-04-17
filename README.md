@@ -1,6 +1,6 @@
 # Pali Digital Twin
 
-A web-based 3D digital twin and interactive map viewer for visualizing geospatial data of Pali. This repository collects various layers of Pali data (contours, buildings, roads, drainage, vegetation, administrative boundaries, etc.) and publishes them in a web viewer using Mapbox GL JS and Vite.
+A web-based 3D digital twin and interactive map viewer for visualizing geospatial data of Pali collected by the Masters of Urban Design Studio at the DY Patil School of Architecture, Navi Mumbai. This repository collects various layers of Pali data (contours, buildings, roads, drainage, vegetation, administrative boundaries, etc.) and publishes them in a web viewer using Mapbox GL JS and Vite.
 
 ## Live Demo
 🌍 **[https://pali-digital-twin.netlify.app/](https://pali-digital-twin.netlify.app/)**
