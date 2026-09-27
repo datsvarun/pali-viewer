@@ -55,6 +55,10 @@ body {
   overflow-y: auto;
 }
 
+.sidebar-toggle {
+  display: none;
+}
+
 .glassmorphism {
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
@@ -161,4 +165,69 @@ header p {
 }
 #sidebar::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+@media (max-width: 640px) {
+  .sidebar-toggle {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 20;
+    display: flex;
+    width: 48px;
+    height: 48px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    border: 1px solid var(--border-glass);
+    border-radius: 10px;
+    background: var(--bg-glass);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--text-main);
+    cursor: pointer;
+  }
+
+  .sidebar-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .sidebar-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .sidebar-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .sidebar-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  #sidebar {
+    top: 16px;
+    left: 16px;
+    width: min(320px, calc(100vw - 32px));
+    max-height: calc(100vh - 32px);
+    padding: 20px;
+    gap: 16px;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  #sidebar.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }

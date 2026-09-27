@@ -49,6 +49,17 @@ class ZoomToPaliControl {
 
 map.addControl(new ZoomToPaliControl(), 'top-right');
 
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+
+sidebarToggle?.addEventListener('click', () => {
+    if (!sidebar) return;
+
+    const isOpen = sidebar.classList.toggle('is-open');
+    sidebarToggle.setAttribute('aria-expanded', String(isOpen));
+    sidebarToggle.setAttribute('aria-label', isOpen ? 'Close map layers' : 'Open map layers');
+});
+
 const geojsonFiles = [
     'AALI MAP_MERGED.geojson',
     'All Wards.shp.geojson',
